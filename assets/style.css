@@ -20,6 +20,10 @@ body {
     line-height: 1.5;
     font-size: 16px;
 }
+header {
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
 
 h1,
 h2,
@@ -28,15 +32,11 @@ h4,
 h5,
 h6 {
     font-weight: 700;
-    margin: 0;
+    margin: 10px;
     color: var(--dark);
     line-height: 1.25;
 }
 
-main {
-    margin: 20px auto;
-    width: 94%;
-}
 .btn {
     font-size: 1.3rem;
     text-decoration:none;
@@ -92,11 +92,18 @@ main {
     padding: 3% 4%;
     background-color: var(--dark);
     color: var(--primary);
+    background-image: url("../assets/images/billy-huynh-unsplash.jpg");
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero p {
     max-width: 100%;
     text-align: center;
+    color:var(--dark);
+    font-size: 34px;
 }
 
 .app-title {
@@ -114,6 +121,10 @@ main {
     margin: 0 0 20px 0;
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
+}
+
+.card-deck {
+    display: flex;
 }
 
 .card-header {
@@ -150,54 +161,3 @@ main {
 
 
 /*columns*/
-.col-auto {
-    flex-grow: 1;
-}
-
-.col-1 {
-    flex: 0 0 calc(100% * 1 / 12 - 2%);
-}
-
-.col-2 {
-    flex: 0 0 calc(100% * 2 / 12 - 2%);
-}
-
-.col-3 {
-    flex: 0 0 calc(100% * 3 / 12 - 2%);
-}
-
-.col-4 {
-    flex: 0 0 calc(100% * 4 / 12 - 2%);
-}
-
-.col-5 {
-    flex: 0 0 calc(100% * 5 / 12 - 2%);
-}
-
-.col-6 {
-    flex: 0 0 calc(100% * 6 / 12 - 2%);
-}
-
-.col-7 {
-    flex: 0 0 calc(100% * 7 / 12 - 2%);
-}
-
-.col-8 {
-    flex: 0 0 calc(100% * 8 / 12 - 2%);
-}
-
-.col-9 {
-    flex: 0 0 calc(100% * 9 / 12 - 2%);
-}
-
-.col-10 {
-    flex: 0 0 calc(100% * 10 / 12 - 2%);
-}
-
-.col-11 {
-    flex: 0 0 calc(100% * 11 / 12 - 2%);
-}
-
-.col-12 {
-    flex: 0 0 100%;
-}

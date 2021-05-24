@@ -30,3 +30,10 @@ var city = cityInputEl.value.trim();
     }
 }
 cityFormEl.addEventListener("submit", formSubmitHandler);
+
+//fetch data from api
+// fetch("http://api.openweathermap.org").then(function(response) {
+//     console.log("inside", response);
+// });
+
+// console.log("outside");
