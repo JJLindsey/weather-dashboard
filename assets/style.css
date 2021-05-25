@@ -159,5 +159,10 @@ h6 {
     border-radius: var(--border-radius);
 }
 
+#city-name {
+    font-size: 40px;
+    font-weight: bolder;
+    color: var(--dark);
+}
 
 /*columns*/

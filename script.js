@@ -31,7 +31,7 @@ function runWeather(data) {
     //weatherIcon.text()
     // const tempEl = document.getElementById("temperature");
     const tempEl = $('#temperature');
-    tempEl.text("temperature: " + tempK2F(data.main.temp) + "°F");
+    tempEl.text("Temperature: " + tempK2F(data.main.temp) + "°F");
     
     const windEl = $("#wind-speed");
     windEl.text("wind-speed: " + data.wind.speed + "mph");
