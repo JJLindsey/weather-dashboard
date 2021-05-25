@@ -20,7 +20,7 @@ function runWeather(data) {
     const clearEl = $("#clear-btn");
     //const cityNameEl = document.getElementById("city-name");
     const cityNameEl = $("#city-name");
-    cityNameEl.text(data.main.name);
+    cityNameEl.text(data.name);
 
     const currentDate = $("#current-date");
     //currentDate.text(new Date(data.list[i].dt_txt).toLocaleDateString());
@@ -59,13 +59,6 @@ var getCityData = function(data) {
     //     });
     // });
 
-    // $.ajax({
-    //     url: apiWeather,
-    //     success: function(data) {
-    //         console.log(data)
-    //     }, 
-    // })
-
     $.get(apiWeather, function(data) {
         console.log(data)
 
@@ -75,18 +68,26 @@ var getCityData = function(data) {
     })
 };
 
-// function runWeather(cityName) {
-//     //  Using saved city name, execute a current condition get request from open weather map api
-//     let apiCity = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + ApiKey;
+// function runWeather(data) {
+// //     //  Using saved city name, execute a current condition get request from open weather map api
+//     let apiCity = "https://api.openweathermap.org/data/2.5/weather?q=" + data + "&appid=0baea045fada1a05a3ef777664d6c3d3";
             
-//     $.get(apiCity, function(data) {
+//         $.get(apiCity, function(data) {
 //             console.log(data);
 //     })    
 // };
-
+// 5 day forecast
 const fiveDay = function(data) {
     const fiveApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + data  + "&appid=0baea045fada1a05a3ef777664d6c3d";
+
+
+    runWeather(data)
 }
+
+const fiveEl = $(".forecast");
+            for (i=0; i<fiveEl.length; i++) {
+            }
+
 
 const weatherIcons = function(data) {
     const iconApi = "https://api.openweathermap.org/data/2.5/weather?q"
