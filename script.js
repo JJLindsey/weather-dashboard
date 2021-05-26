@@ -62,11 +62,26 @@ var getCityData = function(data) {
     $.get(apiWeather, function(data) {
         console.log(data)
 
+    const fiveApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + data  + "&appid=0baea045fada1a05a3ef777664d6c3d";
+
+    $.get(fiveApi, function (fiveDayData) {
+            console.log(fiveDayData)
+
+            const tempDay1 = $("#tempDay1")
+            const tempDay2 = $("#tempDay2")
+            const tempDay3 = $("#tempDay3")
+            const tempDay4 = $("#tempDay4")
+            const tempDay5 = $("#tempDay5")
+
+            tempDay1.text("Temp: " + tempK2F(fiveDayData.list[0].main.temp) + "°F");
+
+            tempDay2.text("Temp: " + tempK2F(fiveDayData.list[0].main.temp) + "°F");
+
         // start rendering data
         runWeather(data)
 
     })
-};
+});
 
 // function runWeather(data) {
 // //     //  Using saved city name, execute a current condition get request from open weather map api
@@ -77,16 +92,11 @@ var getCityData = function(data) {
 //     })    
 // };
 // 5 day forecast
-const fiveDay = function(data) {
-    const fiveApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + data  + "&appid=0baea045fada1a05a3ef777664d6c3d";
 
 
-    runWeather(data)
 }
 
-const fiveEl = $(".forecast");
-            for (i=0; i<fiveEl.length; i++) {
-            }
+
 
 
 const weatherIcons = function(data) {
