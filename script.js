@@ -62,7 +62,7 @@ var getCityData = function(data) {
     $.get(apiWeather, function(data) {
         console.log(data)
 
-    const fiveApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + data  + "&appid=0baea045fada1a05a3ef777664d6c3d";
+    const fiveApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + data.name  + "&appid=0baea045fada1a05a3ef777664d6c3d";
 
     $.get(fiveApi, function (fiveDayData) {
             console.log(fiveDayData)
