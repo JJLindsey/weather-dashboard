@@ -83,15 +83,6 @@ var getCityData = function(data) {
     })
 });
 
-// function runWeather(data) {
-// //     //  Using saved city name, execute a current condition get request from open weather map api
-//     let apiCity = "https://api.openweathermap.org/data/2.5/weather?q=" + data + "&appid=0baea045fada1a05a3ef777664d6c3d3";
-            
-//         $.get(apiCity, function(data) {
-//             console.log(data);
-//     })    
-// };
-// 5 day forecast
 
 
 }
