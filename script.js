@@ -1,9 +1,9 @@
-//api call for weather ??
 //let weatherData = "https://api.openweathermap.org/data/2.5/weather?id={city id}&appid={0baea045fada1a05a3ef777664d6c3d3&q=" + city";
-var ApiKey = "0baea045fada1a05a3ef777664d6c3d3";
+const ApiKey = "0baea045fada1a05a3ef777664d6c3d3";
 //form variables
-var cityFormEl = document.querySelector("#city-form");
-var cityInputEl = document.querySelector("#city-search");
+const cityFormEl = document.querySelector("#city-form");
+const cityInputEl = document.querySelector("#city-search");
+
 
 //get current weather by City unique Id
 //5 day forecast/future conditions call is displayed 
@@ -24,10 +24,9 @@ function runWeather(data) {
 
     const currentDate = $("#current-date");
     //currentDate.text(new Date(data.list[i].dt_txt).toLocaleDateString());
-    //const weatherIcon = document.getElementById("icon");
     //let weatherI = text.data.weather[0].icon;
     const weatherIcon = $("#icon");
-    //weatherIcon.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPic + "@2x.png");
+        //weatherIcon.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPic + "@2x.png");
     //weatherIcon.text()
     // const tempEl = document.getElementById("temperature");
     const tempEl = $('#temperature');
@@ -43,7 +42,28 @@ function runWeather(data) {
     //uvEl.text("UV-index: " + )
     // tempEl.textContent = "New value"
 
+    
+    const fiveApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + data.name  + "&appid=0baea045fada1a05a3ef777664d6c3d";
+    
+        $.get(fiveApi, function(fiveDayData) {
+            console.log(fiveApi)
 
+            const tempDay1El = $('#tempDay1')
+            const tempDay2El = $('#tempDay2')
+            const tempDay3El = $('#tempDay3')
+            const tempDay4El = $('#tempDay4')
+            const tempDay5El = $('#tempDay5')
+    
+            tempDay1El.text("Temperature: " + fiveDayData.list[0].main.temp)
+            tempDay2El.text("Temperature: " + fiveDayData.list[8].main.temp)
+            tempDay3El.text("Temperature: " + fiveDayData.list[15].main.temp)
+            tempDay4El.text("Temperature: " + fiveDayData.list[23].main.temp)
+            tempDay5El.text("Temperature: " + fiveDayData.list[31].main.temp)
+    
+        
+    })
+
+    runWeather(data)
 }
 
 //display current temp
@@ -58,6 +78,7 @@ var getCityData = function(data) {
     //         console.log(weather);
     //     });
     // });
+
 
     $.get(apiWeather, function(data) {
         console.log(data)
@@ -77,22 +98,15 @@ var getCityData = function(data) {
 //     })    
 // };
 // 5 day forecast
-const fiveDay = function(data) {
-    const fiveApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + data  + "&appid=0baea045fada1a05a3ef777664d6c3d";
 
 
-    runWeather(data)
-}
-
-const fiveEl = $(".forecast");
-            for (i=0; i<fiveEl.length; i++) {
-            }
 
 
-const weatherIcons = function(data) {
-    const iconApi = "https://api.openweathermap.org/data/2.5/weather?q"
-   // "http://openweathermap.org/img/wn/" + data.weather.icon + ".png";
-}
+
+// const weatherIcons = function(data) {
+//     const iconApi = "https://api.openweathermap.org/data/2.5/weather?q"
+//    // "http://openweathermap.org/img/wn/" + data.weather.icon + ".png";
+// }
 
 function tempK2F(K) {
     return Math.floor((K - 273.15) *1.8 +32);
